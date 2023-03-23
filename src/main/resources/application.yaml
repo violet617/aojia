@@ -1,0 +1,30 @@
+# 服务器端口
+server:
+  port: 8001
+
+# mysql连接
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+
+# mybatis
+mybatis-plus:
+  # 实体映射文件位置
+  mapper-locations: classpath:/mapper/*.xml
+  # 主键自增
+  global-config:
+    db-config:
+      id-type: auto
+  # 别名设置
+  type-aliases-package: com.zyz.demo_boot.pojo
+  # 控制台打印sql
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# Tomcat
+upload:
+  file-path: D:\\software\\pic\\upload\\
+  img-server-path: http://localhost:8888/pic/
